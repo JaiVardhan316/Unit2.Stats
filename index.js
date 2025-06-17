@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,7 +11,11 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
 }
 
 /**
@@ -19,7 +23,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let sum = getSum(numbers);
+  let length = getLength(numbers);
+  return sum / length;
 }
 
 /**
@@ -27,7 +33,13 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let num = Number.MAX_VALUE;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < num) {
+      num = numbers[i];
+    }
+  }
+  return num;
 }
 
 /**
@@ -35,7 +47,13 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let num = Number.MIN_VALUE;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > num) {
+      num = numbers[i];
+    }
+  }
+  return num;
 }
 
 /**
@@ -43,7 +61,9 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  maxNum = getMax(numbers);
+  minNum = getMin(numbers);
+  return maxNum - minNum;
 }
 
 /**
@@ -51,7 +71,13 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let arr = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0) {
+      arr.push(numbers[i]);
+    }
+  }
+  return arr;
 }
 
 /**
@@ -59,7 +85,13 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let arr = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 != 0) {
+      arr.push(numbers[i]);
+    }
+  }
+  return arr;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
